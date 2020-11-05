@@ -59,12 +59,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //move the tetromino down every second
-    timerId = setInterval(moveDown, 1000)
+    timerId = setInterval(moveDown, 250)
 
     //move down function
     function moveDown() {
         undraw()
         currentPosition += width
         draw()
+        freeze()
+    }
+
+    //freeze function
+    function freeze(){
+        if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))){
+            //+ width as we are checking the very first line just right under the last element of current tetromino
+            //if so, change each ele of tetromino as 'taken'(invisible)
+            current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+            //start a new tetromino falling
+            random = ~~(Math.random() * theTetrominoes.length)
+            current = theTetrominoes[random][currentRotation]
+            currentPosition = 4
+            draw()
+        }
     }
 })
