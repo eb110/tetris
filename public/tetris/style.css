@@ -29,6 +29,11 @@
   background-color: burlywood;
 }
 
+.high-score{
+  margin-left: 50px;
+  background-color: green;
+}
+
 .mini-grid div{
   height: 20px;
   width: 20px;
