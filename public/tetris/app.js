@@ -1,4 +1,7 @@
+import {a} from '../../routes/tetris.js'
+
 document.addEventListener('DOMContentLoaded', () => {
+    console.log(data)
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
     const scoreDisplay = document.querySelector('#score')
