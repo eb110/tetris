@@ -4,9 +4,6 @@ const app = express()
 
 require('./models/mongoose')
 
-const tetrisRekord = require('./models/tetris_db_logic')
-console.log(tetrisRekord)
-
 const indexRouter = require('./routes/index')
 const tetrisRouter = require('./routes/tetris')
 const praktyczneRouter = require('./routes/praktyczne')
