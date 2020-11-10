@@ -3,7 +3,7 @@ const router = express.Router()
 const TetrisHS = require('../models/tetris_high_score.js')
 
 
-export const a = {name: 'ass'}
+const a = {name: 'ass'}
 
 const pobierzRekordy = () => {
     return new Promise ((resolve) => {
@@ -20,8 +20,13 @@ const pobierzRekordy = () => {
 
 
 router.get('/', (req, res) => {
-    pobierzRekordy()
-    res.render('tetris/index')
+    res.render('games/index')
+})
+router.get('/tetris', (req, res) => {
+    res.render('games/tetris/tetris')
+})
+router.get('/snake', (req, res) => {
+    res.render('games/snake/snake')
 })
 
 

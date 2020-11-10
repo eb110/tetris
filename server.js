@@ -5,7 +5,7 @@ const app = express()
 require('./models/mongoose')
 
 const indexRouter = require('./routes/index')
-const tetrisRouter = require('./routes/tetris')
+const gamesRouter = require('./routes/games')
 const praktyczneRouter = require('./routes/praktyczne')
 
 app.set('view engine', 'ejs')
@@ -17,7 +17,7 @@ app.set('views', __dirname + '/views')
 app.use(express.static('public'))
 
 app.use('/', indexRouter)
-app.use('/tetris', tetrisRouter)
+app.use('/games', gamesRouter)
 app.use('/praktyczne', praktyczneRouter)
 
 app.listen(3000)
