@@ -1,12 +1,20 @@
 
 const TetrisHS = require('./tetris_high_score')
-const findHS = async () => {
-    try{
-        const dane = await TetrisHS.find({})
-        return dane
-    }catch (error){
-        console.log(error)
-    }
+
+let dane = {}
+const pobierzRekordy = () => {
+    return new Promise ((resolve) => {
+        try{
+            dane = TetrisHS.find({})
+            resolve()
+        }catch (error){
+            console.log(error)
+        }
+    })
 }
 
-module.exports = findHS
+async function findHS(){
+    await pobierzRekordy()
+}
+
+module.exports = findHS()
