@@ -31,6 +31,9 @@ router.get('/snake', (req, res) => {
 router.get('/snake_ove', (req, res) => {
     res.render('games/snake_ove/snake_ove')
 })
+router.get('/space_invaders', (req, res) => {
+    res.render('games/space_invaders/space_invaders')
+})
 
 
 
