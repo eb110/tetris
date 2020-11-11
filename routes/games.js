@@ -28,6 +28,9 @@ router.get('/tetris', (req, res) => {
 router.get('/snake', (req, res) => {
     res.render('games/snake/snake')
 })
+router.get('/snake_ove', (req, res) => {
+    res.render('games/snake_ove/snake_ove')
+})
 
 
 
